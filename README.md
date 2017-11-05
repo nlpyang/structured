@@ -17,7 +17,7 @@ The pre-processed YELP 2013 data can be downloaded at https://drive.google.com/o
 #### Preprocessing
 To preprocess the data, run
 ```
-python prepare_data.py --traindata path-to-train --devdata path-to-dev
+python prepare_data.py path-to-train path-to-dev path-to-test
 ```
 This will generate a pickle file, the format for the input data can be found in the sample folder
 
