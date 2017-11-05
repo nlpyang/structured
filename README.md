@@ -12,7 +12,7 @@ This code is implemented with Tensorflow and the data preprocessing is with Gens
 ## Document Classification
 
 #### Data
-The pre-processed YELP 2013 data can be downloaded at
+The pre-processed YELP 2013 data can be downloaded at https://drive.google.com/open?id=0BxGUKratNjbaZjFIR1MtbkdzZVU
 
 #### Preprocessing
 To preprocess the data, run
