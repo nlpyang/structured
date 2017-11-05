@@ -3,7 +3,7 @@
 Code for the paper:
 
 [Learning Structured Text Representations](https://arxiv.org/abs/1705.09207)  
-Yang Liu and Mirella Lapata
+Yang Liu and Mirella Lapata,
 Accepted by TACL
 
 ## Dependencies
