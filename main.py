@@ -2,15 +2,13 @@ from data_structure import DataSet
 import tensorflow as tf
 import numpy as np
 import cPickle
-import time
 import logging
-from models import  StructureModel, Trainer
+from models import  StructureModel
 import tqdm
 
 def load_data(config):
     train, dev, test, embeddings, vocab = cPickle.load(open(config.data_file))
     trainset, devset, testset = DataSet(train), DataSet(dev), DataSet(test)
-
     vocab = dict([(v.index,k) for k,v in vocab.items()])
     trainset.sort()
     train_batches = trainset.get_batches(config.batch_size, config.epochs, rand=True)
@@ -19,24 +17,6 @@ def load_data(config):
     dev_batches = [i for i in dev_batches]
     test_batches = [i for i in test_batches]
     return len(train), train_batches, dev_batches, test_batches, embeddings, vocab
-
-
-def get_conll(instance_lst):
-    ret = ''
-    for instance in instance_lst:
-        tokens_lst, str_scores_lst = instance
-        tmp = np.zeros([str_scores_lst.shape[0], str_scores_lst.shape[1], 1])
-        str_scores = np.concatenate([tmp, str_scores_lst], 2)
-
-        for i, tokens in enumerate(tokens_lst):
-            heads, tree_score = chu_liu_edmonds(np.log(str_scores[i].astype(np.float64)).T)
-            tokens = ['root'] + tokens
-            for j, token in enumerate(tokens):
-                ret += '{}\t{}\t_\t_\t_\t_\t{}\t_\t_\t_\n'.format(j + 1, token, int(heads[j] + 1))
-            ret += '========\n'
-            ret += np.array_str(str_scores_lst[i])+'\n'
-            ret += '========\n'
-    return ret
 
 def evaluate(sess, model, test_batches):
     corr_count, all_count = 0, 0
