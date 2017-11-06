@@ -3,7 +3,7 @@
 Code for the paper:
 
 [Learning Structured Text Representations](https://arxiv.org/abs/1705.09207)  
-Yang Liu and Mirella Lapata
+Yang Liu and Mirella Lapata,
 Accepted by TACL
 
 ## Dependencies
@@ -12,12 +12,12 @@ This code is implemented with Tensorflow and the data preprocessing is with Gens
 ## Document Classification
 
 #### Data
-The pre-processed YELP 2013 data can be downloaded at
+The pre-processed YELP 2013 data can be downloaded at https://drive.google.com/open?id=0BxGUKratNjbaZjFIR1MtbkdzZVU
 
 #### Preprocessing
 To preprocess the data, run
 ```
-python prepare_data.py --traindata path-to-train --devdata path-to-dev
+python prepare_data.py path-to-train path-to-dev path-to-test
 ```
 This will generate a pickle file, the format for the input data can be found in the sample folder
 
