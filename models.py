@@ -92,9 +92,9 @@ class StructureModel():
                             initializer=tf.contrib.layers.xavier_initializer())
             tf.get_variable("w_parser_s", [2 * self.config.dim_str, 2 * self.config.dim_str], dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
-            tf.get_variable("bias_parser_p", [1], dtype=tf.float32,
+            tf.get_variable("bias_parser_p", [2 * self.config.dim_str], dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
-            tf.get_variable("bias_parser_c", [1], dtype=tf.float32,
+            tf.get_variable("bias_parser_c", [2 * self.config.dim_str], dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
             tf.get_variable("w_parser_root", [2 * self.config.dim_str, 1], dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
@@ -105,9 +105,9 @@ class StructureModel():
             tf.get_variable("w_parser_c", [2 * self.config.dim_str, 2 * self.config.dim_str],
                             dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
-            tf.get_variable("bias_parser_p", [1], dtype=tf.float32,
+            tf.get_variable("bias_parser_p", [2 * self.config.dim_str], dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
-            tf.get_variable("bias_parser_c", [1], dtype=tf.float32,
+            tf.get_variable("bias_parser_c", [2 * self.config.dim_str], dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
 
             tf.get_variable("w_parser_s", [2 * self.config.dim_str, 2 * self.config.dim_str], dtype=tf.float32,
