@@ -188,7 +188,7 @@ class StructureModel():
     def get_loss(self):
         if (self.config.opt == 'Adam'):
             optimizer = tf.train.AdamOptimizer(self.config.lr)
-        elif (self.config.opt == 'Adagrad'):
+        else:
             optimizer = tf.train.AdagradOptimizer(self.config.lr)
         with tf.variable_scope("Model"):
             self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.final_output,
